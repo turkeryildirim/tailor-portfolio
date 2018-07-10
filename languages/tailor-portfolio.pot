@@ -1,16 +1,27 @@
 # Copyright (C) 2016 Tailor - Portfolio extension
 # This file is distributed under the same license as the Tailor - Portfolio extension package.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Tailor - Portfolio extension 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tailor-portfolio\n"
-"POT-Creation-Date: 2016-10-20 08:11:13+00:00\n"
+"POT-Creation-Date: 2018-07-10 15:13+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_ex;_nx;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_n_noop;_nx_noop;translate_nooped_plural\n"
+"X-Poedit-SearchPath-0: partials\n"
+"X-Poedit-SearchPath-1: includes\n"
+"X-Poedit-SearchPath-2: includes/shortcodes\n"
+"X-Poedit-SearchPath-3: includes/portfolio\n"
+"X-Poedit-SearchPath-4: includes/elements\n"
+"X-Poedit-SearchPath-5: uninstall.php\n"
+"X-Poedit-SearchPath-6: tailor-portfolio.php\n"
 
 #: includes/elements/class-projects.php:33
 msgid "General"
@@ -53,12 +64,13 @@ msgid "Author"
 msgstr ""
 
 #: includes/elements/class-projects.php:174
-#: includes/elements/class-projects.php:253 tailor-portfolio.php:248
+#: includes/elements/class-projects.php:253
+#: includes/portfolio/class-post-type.php:118
 msgid "Portfolio"
 msgstr ""
 
 #: includes/elements/class-projects.php:175
-#: includes/portfolio/class-post-type.php:233
+#: includes/portfolio/class-post-type.php:211
 msgid "Date"
 msgstr ""
 
@@ -71,6 +83,7 @@ msgid "Featured image"
 msgstr ""
 
 #: includes/elements/class-projects.php:264
+#: includes/portfolio/class-post-type.php:138
 msgid "Skill"
 msgstr ""
 
@@ -79,18 +92,15 @@ msgid "Projects Page"
 msgstr ""
 
 #: includes/portfolio/class-post-type.php:47
-#: includes/portfolio/class-post-type.php:279
-msgctxt "slug"
+#: includes/portfolio/class-post-type.php:257
 msgid "project"
 msgstr ""
 
 #: includes/portfolio/class-post-type.php:67
-msgctxt "project general name"
 msgid "Projects"
 msgstr ""
 
 #: includes/portfolio/class-post-type.php:68
-msgctxt "project singular name"
 msgid "Project"
 msgstr ""
 
@@ -99,7 +109,6 @@ msgid "All Projects"
 msgstr ""
 
 #: includes/portfolio/class-post-type.php:70
-msgctxt "project"
 msgid "Add New"
 msgstr ""
 
@@ -132,109 +141,94 @@ msgstr ""
 msgid "This is where you can add new projects to your portfolio."
 msgstr ""
 
+#: includes/portfolio/class-post-type.php:118
+msgid "Portfolios"
+msgstr ""
+
 #: includes/portfolio/class-post-type.php:126
-#: includes/portfolio/class-post-type.php:291
-msgctxt "slug"
+#: includes/portfolio/class-post-type.php:269
 msgid "portfolio"
 msgstr ""
 
+#: includes/portfolio/class-post-type.php:138
+msgid "Skills"
+msgstr ""
+
 #: includes/portfolio/class-post-type.php:145
-#: includes/portfolio/class-post-type.php:303
-msgctxt "slug"
+#: includes/portfolio/class-post-type.php:281
 msgid "skill"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:169
+#: includes/portfolio/class-post-type.php:168
+#, php-format
 msgid "Search %s"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:170
+#: includes/portfolio/class-post-type.php:169
+#, php-format
 msgid "All %s"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:171
+#: includes/portfolio/class-post-type.php:170
+#, php-format
 msgid "Parent %s"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:172
+#: includes/portfolio/class-post-type.php:171
+#, php-format
 msgid "Parent %s:"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:173
+#: includes/portfolio/class-post-type.php:172
+#, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:174
+#: includes/portfolio/class-post-type.php:173
+#, php-format
 msgid "Update %s"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:175
+#: includes/portfolio/class-post-type.php:174
+#, php-format
 msgid "Add New %s"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:176
+#: includes/portfolio/class-post-type.php:175
+#, php-format
 msgid "New %s Name"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:177
+#: includes/portfolio/class-post-type.php:176
+#, php-format
 msgid "Separate %s with commas"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:178
+#: includes/portfolio/class-post-type.php:177
+#, php-format
 msgid "Chose from the most recently used %s"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:227
+#: includes/portfolio/class-post-type.php:205
 msgid "Title"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:228
+#: includes/portfolio/class-post-type.php:206
 msgid "Thumbnail"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:265
+#: includes/portfolio/class-post-type.php:243
 msgid "Project base"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:266
+#: includes/portfolio/class-post-type.php:244
 msgid "Portfolio base"
 msgstr ""
 
-#: includes/portfolio/class-post-type.php:267
+#: includes/portfolio/class-post-type.php:245
 msgid "Skill base"
 msgstr ""
 
-#: includes/shortcodes/shortcode-projects.php:126
+#: includes/shortcodes/shortcode-projects.php:127
 msgid "Please configure this element as there is currently nothing to display"
-msgstr ""
-
-#: tailor-portfolio.php:147
-msgid "Please ensure that Tailor 1.7.0 (or newer) is active to use the Portfolio extension."
-msgstr ""
-
-#: tailor-portfolio.php:246
-msgid "Projects"
-msgstr ""
-
-#: tailor-portfolio.php:247
-msgid "Your site's projects."
-msgstr ""
-#. Plugin Name of the plugin/theme
-msgid "Tailor - Portfolio extension"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "http://www.gettailor.com"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Adds portfolio functionality to the Tailor plugin."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Andrew Worsfold"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://www.andrewworsfold.com"
 msgstr ""
