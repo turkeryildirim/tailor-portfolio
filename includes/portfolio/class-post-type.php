@@ -64,10 +64,10 @@ if ( ! class_exists( 'Portfolio_Post_Types' ) ) {
 				apply_filters( 'tailor_project_parameters',
 					array(
 						'labels'              => array(
-							'name'                      =>  _x( 'Projects', 'project general name' ),
-							'singular_name'             =>  _x( 'Project', 'project singular name' ),
+							'name'                      =>  __( 'Projects', 'tailor-portfolio' ),
+							'singular_name'             =>  __( 'Project', 'tailor-portfolio' ),
 							'all_items'                 =>  __( 'All Projects', 'tailor-portfolio' ),
-							'add_new'                   =>  _x( 'Add New', 'project', 'tailor-portfolio' ),
+							'add_new'                   =>  __( 'Add New', 'tailor-portfolio' ),
 							'add_new_item'              =>  __( 'Add New Project', 'tailor-portfolio' ),
 							'edit_item'                 =>  __( 'Edit Project', 'tailor-portfolio' ),
 							'new_item'                  =>  __( 'Add New Project', 'tailor-portfolio' ),
@@ -115,7 +115,7 @@ if ( ! class_exists( 'Portfolio_Post_Types' ) ) {
 			register_taxonomy( 'portfolio',
 				'project',
 				apply_filters( 'tailor_portfolio_parameters', array(
-					'labels'                    =>  self::taxonomy_labels( 'Portfolio' ),
+					'labels'                    =>  self::taxonomy_labels(__('Portfolio', 'tailor-portfolio'), __('Portfolios', 'tailor-portfolio')),
 					'public'                    =>  true,
 					'hierarchical' 				=> 	true,
 					'show_ui' 					=> 	true,
@@ -135,7 +135,7 @@ if ( ! class_exists( 'Portfolio_Post_Types' ) ) {
 			register_taxonomy( 'skill',
 				'project',
 				apply_filters( 'tailor_skill_parameters', array(
-						'labels'                    =>  self::taxonomy_labels( 'Skill' ),
+                        'labels'                    =>  self::taxonomy_labels(__('Skill', 'tailor-portfolio'), __('Skills', 'tailor-portfolio')),
 						'public'                    =>  true,
 						'hierarchical' 				=> 	false,
 						'show_ui' 					=> 	true,
@@ -150,18 +150,17 @@ if ( ! class_exists( 'Portfolio_Post_Types' ) ) {
 			);
 		}
 
-		/**
-		 * Returns the set of labels for a given taxonomy.
-		 *
-		 * @since 1.0.0
-		 * @static
-		 *
-		 * @param $taxonomy_name
-		 * @return mixed|void
-		 */
-		static function taxonomy_labels( $taxonomy_name ) {
-
-			$pluralized_name = self::pluralize_string( $taxonomy_name );
+        /**
+         * Returns the set of labels for a given taxonomy.
+         *
+         * @since 1.0.0
+         * @static
+         *
+         * @param $taxonomy_name
+         * @param $pluralized_name
+         * @return mixed
+         */
+		static function taxonomy_labels( $taxonomy_name, $pluralized_name ) {
 
 			return apply_filters( 'tailor_taxonomy_labels', array(
 				'name' 							=> 	$pluralized_name,
@@ -178,27 +177,6 @@ if ( ! class_exists( 'Portfolio_Post_Types' ) ) {
 				'choose_from_most_used'			=> 	sprintf( __( 'Chose from the most recently used %s', 'tailor-portfolio' ), strtolower( $pluralized_name ) ),
 				'menu_name' 					=> 	$pluralized_name,
 			) );
-		}
-
-		/**
-		 * Returns the pluralized version of a string.
-		 *
-		 * @since 1.0.0
-		 * @static
-		 *
-		 * @param $string
-		 * @return string
-		 */
-		static function pluralize_string( $string ) {
-			$last = $string[ strlen( $string ) - 1 ];
-			if ( 'y' == $last ) {
-				$cut = substr( $string, 0, -1 );
-				$plural = $cut . 'ies';
-			}
-			else {
-				$plural = $string . 's';
-			}
-			return $plural;
 		}
 
 		/**
@@ -228,7 +206,7 @@ if ( ! class_exists( 'Portfolio_Post_Types' ) ) {
 				'thumbnail'				=> 	__( 'Thumbnail', 'tailor-portfolio' ),
 			);
 			foreach ( (array) $taxonomies = get_object_taxonomies( 'project', 'objects' ) as $taxonomy ) {
-				$columns[ 'taxonomy-' . $taxonomy->name ] = ucfirst( self::pluralize_string( $taxonomy->name ) );
+				$columns[ 'taxonomy-' . $taxonomy->name ] = ucfirst( __( $taxonomy->name, 'tailor-portfolio' ) );
 			}
 			$columns['date'] = __( 'Date', 'tailor-portfolio' );
 			return $columns;
